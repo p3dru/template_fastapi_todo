@@ -29,35 +29,35 @@ Antes de rodar o projeto, você ter instalado:
     
 * 4.1 - Se estiver no windows:
         
-* 4.1.1 - Crie um ambiente virtual via cmd (isola o ambiente e evita conflitos entre outros ambientes):
+> * 4.1.1 - Crie um ambiente virtual via cmd (isola o ambiente e evita conflitos entre outros ambientes):
         ```
         python -m venv [nome_do_seu_ambiente]
         ```
 
-* 4.1.2 - Ative o ambiente:
+> * 4.1.2 - Ative o ambiente:
         ```
         [nome_do_ambiente]/Scripts/activate
         ```
 
-* 4.1.3 - Para desativar:
+> * 4.1.3 - Para desativar:
         ```
         [nome_do_ambiente]/Scripts/deactivate
         ```
 
 * 4.2 - Se estiver no Linux/Mac:
 
-* 4.1.1 - Crie um ambiente virtual via cmd (isola o ambiente e evita conflitos entre outros ambientes):
+> * 4.2.1 - Crie um ambiente virtual via cmd (isola o ambiente e evita conflitos entre outros ambientes):
         ```
         python3 -m venv 
         [nome_do_seu_ambiente]
         ```
     
-* 4.1.2 - Ative o ambiente:
+> * 4.2.2 - Ative o ambiente:
         ```
         source [nome_do_ambiente]/bin/activate
         ```
     
-* 4.1.3 - Para desativar:
+> * 4.2.3 - Para desativar:
         ```
         source [nome_do_ambiente]/bin/deactivate
         ```
@@ -67,9 +67,11 @@ Antes de rodar o projeto, você ter instalado:
         pip install -r requirements.txt
         ```
 
-        Aqui, instala todas as dependências de uma vez, sem precisar instalar manualmente de um por um.
+  Aqui, instala todas as dependências de uma vez, sem precisar instalar manualmente de um por um.
 
-5 - Feito tudo isso, agora é só rodar o projeto:
+5 - Crie um ```.env``` para que o sistema rode corretamente. Siga o exemplo do arquivo ```.env.example```.
+
+6 - Feito tudo isso, agora é só rodar o projeto:
     ```
     uvicorn app.main:app -reload
     ```
@@ -89,10 +91,10 @@ Caso tenha alguma coisa errada, foi mal, me manda uma mensagem no [Linkedin](htt
 
 #### Testando a aplicação
 Na raiz do projeto, no seu cmd (ou no seu editor), digite: 
-
     ```
     pytest
     ```
+    
 E daí os testes serão rodados tranquilamente.
 
 ---
