@@ -5,9 +5,3 @@ a_fazer.txt
 
 #pastas
 template
-__pycache__
-modules/__pycache__
-modules/admin/__pycache__
-modules/auth/__pycache__
-modules/todos/__pycache__
-modules/users/__pycache__
