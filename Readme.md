@@ -20,20 +20,27 @@ Antes de rodar o projeto, você ter instalado:
 3 - Abra a pasta no seu editor de código
 
 4 - Instalar as dependências:
+    
     4.1 - Se estiver no windows:
+        
         4.1.1 - Crie um ambiente virtual via cmd (isola o ambiente e evita conflitos entre outros ambientes):
         ```python -m venv [nome_do_seu_ambiente]
+        
         4.1.2 - Ative o ambiente:
         ```[nome_do_ambiente]/Scripts/activate
+        
         4.1.3 - Para desativar:
         ```[nome_do_ambiente]/Scripts/deactivate
 
     4.2 - Se estiver no Linux/Mac:
+
         4.1.1 - Crie um ambiente virtual via cmd (isola o ambiente e evita conflitos entre outros ambientes):
         ```python3 -m venv 
         [nome_do_seu_ambiente]
+    
         4.1.2 - Ative o ambiente:
         ```source [nome_do_ambiente]/bin/activate
+    
         4.1.3 - Para desativar:
         ```source [nome_do_ambiente]/bin/deactivate
 
