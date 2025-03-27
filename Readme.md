@@ -2,13 +2,13 @@
 Este é um projeto desenvolvido com python 3.12 utilizando FastAPI e PostgreSQL.
 E tentando copiar a arquitetura nativa do NestJS pelo qual acho muito limpa e organizada.
 Sim, tenho preferência por arquitetura monolítica e modular.
-
+---
 #### Requisitos
 Antes de rodar o projeto, você ter instalado:
 - [Python](https://www.python.org/downloads/) (claro)
 - [PostgreSQL](https://www.postgresql.org/download/) (Mas se quiser usar outro banco, tudo bem, o chatGPT pode ajudar a configurar, escolhi o postgres, pelo fato de gostar mais dele)
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), não obrigatório, mas é recomendado para o versionamento
-
+---
 #### Como baixar este bendito projeto
 0 - Vá até o diretório da sua máquina onde você deseja baixar o projeto (de preferência no cmd)
 
@@ -58,16 +58,16 @@ Se quiser rodar em outra porta que não seja a 8000, use:
     ```uvicorn main:app --reload --port [numero_da_porta]
 
 Caso tenha alguma coisa errada, foi mal, me manda uma mensagem no [Linkedin](https://www.linkedin.com/in/p3dru/).
-
+---
 #### Testando a aplicação
 Na raiz do projeto, no seu cmd (ou no seu editor), digite: 
     ```pytest
 E daí os testes serão rodados tranquilamente.
-
+---
 #### Licença
 Pode passar. Esse negócio é livre.
 Faça o que quiser com esse código.
-
+---
 #### Explicação de arquivos e suas funções:
 ##### main.py
 É o ponto de entrada da aplicação. É responsável por iniciar o FastAPI, configurar os middlewares e incluir os routers da aplicação.
