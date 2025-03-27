@@ -23,6 +23,22 @@ db_dependency = Annotated[Session, Depends(get_db)]
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
 async def create_user(db: db_dependency, create_user_request: CreateUserRequest):
+    #verificar se o email já existe
+    existing_email = db.query(Users).filter(Users.email == create_user_request.email).first()
+    if existing_email:
+        raise HTTPException(
+            status_code = status.HTTP_409_CONFLICT,
+            detail = "Email já cadastrado."
+        )
+    
+    # Verificar se o username já existe
+    existing_username = db.query(Users).filter(Users.username == create_user_request.username).first()
+    if existing_username:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Username já cadastrado."
+        )
+
     create_user_model = Users(
         email=create_user_request.email,
         username=create_user_request.username,
@@ -30,8 +46,7 @@ async def create_user(db: db_dependency, create_user_request: CreateUserRequest)
         last_name=create_user_request.last_name,
         hashed_password=bcrypt_context.hash(create_user_request.password),
         role=create_user_request.role,
-        is_active=True,
-        phone_number=create_user_request.phone_number
+        is_active=True
     )
 
     db.add(create_user_model)

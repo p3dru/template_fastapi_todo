@@ -5,7 +5,7 @@ from app.database import SessionLocal, get_db
 from typing import Annotated
 from sqlalchemy.orm import Session
 from starlette import status
-from app.modules.auth.routers import get_current_user
+from app.modules.auth.dependencies import get_current_user
 
 
 router = APIRouter(

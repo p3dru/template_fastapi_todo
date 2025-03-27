@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Session
+from app.modules.todos.services import get_all_todos as get_todos
 from app.modules.todos.models import Todos
 from app.modules.users.models import Users
 from fastapi import HTTPException, status
@@ -21,6 +22,11 @@ def delete_user(db: Session, user_id: int):
     user_model = db.query(Users).filter(Users.id == user_id).first()
     if user_model is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found.")
-    
+
+    #excluir todos os "todos" associados a esse usuário
+    db.query(Todos).filter(Todos.owner_id == user_id).delete()
+
+    #excluir o usuário do banco de dados
     db.query(Users).filter(Users.id == user_id).delete()
+
     db.commit()
