@@ -1,7 +1,3 @@
-Explicar como rodar o projeto
-Explicar como os arquivos são
-Como realizar testes
-
 ### Todo-list simples (pelo fato de ser simples)
 Este é um projeto desenvolvido com python 3.12 utilizando FastAPI e PostgreSQL.
 E tentando copiar a arquitetura nativa do NestJS pelo qual acho muito limpa e organizada.
@@ -9,51 +5,56 @@ Sim, tenho preferência por arquitetura monolítica e modular.
 
 #### Requisitos
 Antes de rodar o projeto, você ter instalado:
-- [Python](https://www.python.org/downloads/)(claro)
+- [Python](https://www.python.org/downloads/) (claro)
 - [PostgreSQL](https://www.postgresql.org/download/) (Mas se quiser usar outro banco, tudo bem, o chatGPT pode ajudar a configurar, escolhi o postgres, pelo fato de gostar mais dele)
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), não obrigatório, mas é recomendado para o versionamento
 
 #### Como baixar este bendito projeto
-0 - Vá até o diretório da sua máquina onde você deseja baixar o projeto (de preferência no cmd) 
+0 - Vá até o diretório da sua máquina onde você deseja baixar o projeto (de preferência no cmd)
+
 1 - Clone o repositório para sua máquina local com o código:
-    ```bash git clone https://github.com/p3dru/template_fastapi_todo.git
+    ```git clone https://github.com/p3dru/template_fastapi_todo.git
+
 2 - Acesse a pasta template_fastapi_todo onde você salvou
+
 3 - Abra a pasta no seu editor de código
+
 4 - Instalar as dependências:
     4.1 - Se estiver no windows:
         4.1.1 - Crie um ambiente virtual via cmd (isola o ambiente e evita conflitos entre outros ambientes):
-        ```bash python -m venv [nome_do_seu_ambiente]
+        ```python -m venv [nome_do_seu_ambiente]
         4.1.2 - Ative o ambiente:
-        ```bash [nome_do_ambiente]/Scripts/activate
+        ```[nome_do_ambiente]/Scripts/activate
         4.1.3 - Para desativar:
-        ```bash [nome_do_ambiente]/Scripts/deactivate
+        ```[nome_do_ambiente]/Scripts/deactivate
 
     4.2 - Se estiver no Linux/Mac:
         4.1.1 - Crie um ambiente virtual via cmd (isola o ambiente e evita conflitos entre outros ambientes):
-        ```bash python3 -m venv 
+        ```python3 -m venv 
         [nome_do_seu_ambiente]
         4.1.2 - Ative o ambiente:
-        ```bash source [nome_do_ambiente]/bin/activate
+        ```source [nome_do_ambiente]/bin/activate
         4.1.3 - Para desativar:
-        ```bash source [nome_do_ambiente]/bin/deactivate
+        ```source [nome_do_ambiente]/bin/deactivate
 
     4.3 - Instale as bibliotecas e dependências do projeto:
-        ```bash pip install -r requirements.txt
+        ```pip install -r requirements.txt
 
         Aqui, instala todas as dependências de uma vez, sem precisar instalar manualmente de um por um.
+
 5 - Feito tudo isso, agora é só rodar o projeto:
-    ```bash uvicorn app.main:app -reload
+    ```uvicorn app.main:app -reload
 
 Feito isso, tudo deve rodar perfeitamente em http://localhost:8000/.
 Para ver todos os endpoints e para realizar testes manuais, basta acessar http://localhost:8000/docs para visualizar o Swagger. 
 Se quiser rodar em outra porta que não seja a 8000, use: 
-    ```bash uvicorn main:app --reload --port [numero_da_porta]
+    ```uvicorn main:app --reload --port [numero_da_porta]
 
 Caso tenha alguma coisa errada, foi mal, me manda uma mensagem no [Linkedin](https://www.linkedin.com/in/p3dru/).
 
 #### Testando a aplicação
 Na raiz do projeto, no seu cmd (ou no seu editor), digite: 
-    ```bash pytest
+    ```pytest
 E daí os testes serão rodados tranquilamente.
 
 #### Licença
