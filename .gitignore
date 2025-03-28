@@ -1,7 +1,8 @@
 #documentos
 .env
 a_fazer.txt
-
+alembic.ini
 
 #pastas
 template
+alembic
