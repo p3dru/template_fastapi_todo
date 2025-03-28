@@ -1,6 +1,6 @@
 ### Todo-list simples (pelo fato de ser simples)
 Este é um projeto desenvolvido com python 3.12 utilizando FastAPI e PostgreSQL.
-E tentando copiar a arquitetura nativa do NestJS pelo qual acho muito limpa e organizada.
+E tentando copiar a arquitetura nativa do NestJS no qual acho muito limpa e organizada.
 Sim, tenho preferência por arquitetura monolítica e modular.
 
 ---
@@ -69,9 +69,19 @@ Antes de rodar o projeto, você ter instalado:
 
   Aqui, instala todas as dependências de uma vez, sem precisar instalar manualmente de um por um.
 
-5 - Crie um ```.env``` para que o sistema rode corretamente. Siga o exemplo do arquivo ```.env.example```.
+5 - Configure o banco de dados com Alembic.
+* 5.1 - Execute ```alembic init alembic``` para configurar inicialmente o Alembic.
+* 5.2 - Configure o ```alembic.ini``` com a string de conexão correta para o PostgreSQL.
+```sqlalchemy.url = postgresql://usuario:senha@host:porta/nome_banco```
+* 5.3 - Na primeira vez, como não temos uma estrutura correta, aplique as migrações existentes com: ```alembic upgrade head```
+* 5.4 - Crie uma nova migração com ```alembic revision --autogenerate -m "Migração Inicial"```
+* 5.5 - Depois, aplique a atualização no banco executando ```alembic upgrade head```
 
-6 - Feito tudo isso, agora é só rodar o projeto:
+> * Caso precise desfazer a última migração (por algum problema diverso), executando: ```alembic downgrade -1```
+
+6 - Crie um ```.env``` para que o sistema rode corretamente. Siga o exemplo do arquivo ```.env.example```.
+
+7 - Feito tudo isso, agora é só rodar o projeto:
     ```
     uvicorn app.main:app -reload
     ```
